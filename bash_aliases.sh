@@ -26,3 +26,20 @@ gd() {
 gb() {
     git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 }
+git-split() {
+    set -e
+
+    LF=$'\n'
+    SHA=$(git rev-parse --short HEAD)
+    MSG=$(git show -s --format=%B HEAD)
+    set -f; IFS=$'\n'
+    FILES=($(git diff-tree --no-commit-id --name-only -r HEAD))
+    set +f; unset IFS
+
+    git reset HEAD^
+
+    for f in "${FILES[@]}"; do
+      git add "$f"
+      git commit -m "$SHA $f$LF$LF$MSG"
+    done
+}
