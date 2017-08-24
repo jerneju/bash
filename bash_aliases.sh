@@ -43,3 +43,15 @@ git-split() {
       git commit -m "$SHA $f$LF$LF$MSG"
     done
 }
+git-copy() {
+    git mv $1 $2
+    git commit -n
+    SAVED=`git rev-parse HEAD`
+    git reset --hard HEAD^
+    git mv $1 foo-magic
+    git commit -n
+    git merge $SAVED # This will generate conflicts
+    git commit -a -n # Trivially resolved like this
+    git mv foo-magic $1
+    git commit -n
+}
