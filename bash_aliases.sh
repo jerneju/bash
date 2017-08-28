@@ -55,3 +55,14 @@ git-copy() {
     git mv foo-magic $1
     git commit -n
 }
+cov() {
+    if [ -f tests/test_$1 ]; then
+        coverage run -m unittest tests/test_$1
+        coverage html --include $1
+    elif [ -f test_$1 ]; then
+        coverage run -m unittest test_$1
+        coverage html --include ../$2/$1
+    else
+        echo Test file not found
+    fi
+}
