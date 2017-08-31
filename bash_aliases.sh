@@ -15,6 +15,7 @@ alias o='orange-canvas'
 alias or='orange-canvas --clear-widget-settings'
 alias oc='orange-canvas --clear-widget-settings'
 alias t='python -m unittest'
+alias gl='git log --name-only'
 
 #My functions
 gr() {
