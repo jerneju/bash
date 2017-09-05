@@ -3,7 +3,14 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias dir='ls -palh'
+# -p, --file-type   Append indicator (one of /=@|) to entries
+# -a, --all    List all entries including those starting with a dot .
+# -l    Use a long listing format
+# -h, --human-readable Print sizes in human readable format (e.g., 1K 234M 2G)
+# --size    Print size of each file, in blocks
+# -t    sort by modification time
+# -u    sort by last access time; with -l: show atime
+alias dir='ls -palh --size'
 alias ..='cd ..'
 alias rm='rm -i'
 alias cp='cp -i'
