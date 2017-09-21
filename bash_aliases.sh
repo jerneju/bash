@@ -25,6 +25,10 @@ alias t='python -m unittest'
 alias gl='git log --name-only'
 
 #My functions
+# https://stackoverflow.com/questions/2421011/output-of-git-branch-in-tree-like-fashion
+glg() {
+    git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+}
 gr() {
     git rebase -i HEAD~$1
 }
