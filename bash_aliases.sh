@@ -23,6 +23,7 @@ alias or='orange-canvas --clear-widget-settings -l 4'
 alias oc='orange-canvas --clear-widget-settings -l 4'
 alias t='python -m unittest'
 alias gl='git log --name-only'
+alias jn='jupyter notebook'
 
 #My functions
 # https://stackoverflow.com/questions/2421011/output-of-git-branch-in-tree-like-fashion
