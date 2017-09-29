@@ -22,6 +22,7 @@ alias o='orange-canvas -l 4'
 alias or='orange-canvas --clear-widget-settings -l 4'
 alias oc='orange-canvas --clear-widget-settings -l 4'
 alias t='python -m unittest'
+alias gc='git checkout'
 alias gl='git log --name-only'
 alias jn='jupyter notebook'
 
