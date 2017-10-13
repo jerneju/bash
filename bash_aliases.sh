@@ -34,6 +34,10 @@ glg() {
 gr() {
     git rebase -i HEAD~$1
 }
+# Compare two files. Can be used outside of a repository.
+gdf() {
+    git diff --no-index $1 $2
+}
 gd() {
     git diff HEAD~$1 $2
 }
