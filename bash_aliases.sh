@@ -84,3 +84,10 @@ cov() {
         echo Test file not found
     fi
 }
+# ffmpeg
+mpeg-extract() {
+    ffmpeg -ss 00:$2 -i $1 -to 00:$3 -acodec copy -vcodec copy $4
+}
+mpeg-concat() {
+    ffmpeg -i "concat:$1|$2" -acodec copy -vcodec copy $3
+}
