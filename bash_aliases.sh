@@ -91,3 +91,7 @@ mpeg-extract() {
 mpeg-concat() {
     ffmpeg -i "concat:$1|$2" -acodec copy -vcodec copy $3
 }
+# pdf
+pdf22() {
+    pdfnup --nup 2x1 --suffix '2x1' $1
+}
