@@ -95,3 +95,7 @@ mpeg-concat() {
 pdf22() {
     pdfnup --nup 2x1 --suffix '2x1' $1
 }
+# grep
+g() {
+grep -r $1 *
+}
